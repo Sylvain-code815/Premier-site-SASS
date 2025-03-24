@@ -40,22 +40,19 @@ h2 {
       text-transform: uppercase;
       font-weight: bold;
 }
-
+h3 {
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      font-size: 0.8rem;
+      font-weight: 900;
+      font-weight: bold;
+}
 h4 {
-      letter-spacing: 20px;
+      font-weight: 200;
 }
 
-p {
-      line-height: 36px;
-      margin-top: 25px; 
-      font-size: 1.25rem;
-      color: $color1;
-      font-style: italic;
-      text-align: center;
-    }
-
 .button {
-      border: 1px solid #ccc;
+      border: 1px solid #000000;
       background: transparent;
       padding: 13px 30px;
       display: inline-block;
@@ -81,8 +78,22 @@ header {
       @include centerChild;
       flex-direction: column;
 
+      .home-page {
+            width: 80%;
+
+                  p {
+                        line-height: 36px;
+                        margin-top: 25px; 
+                        font-size: 1.25rem;
+                        color: $color1;
+                        font-style: italic;
+                        text-align: center;
+                  }
+      }
+
       nav {
             position: absolute;
+            background: transparent;
             bottom: 0;
             display: flex;
             justify-content: space-between;
@@ -99,16 +110,128 @@ header {
       .menu {
             display: flex;
             justify-content: space-around;
-      }
-      .menu:hover {
-            background: $white;
+            
+            li {
+                padding: 5px 10px; 
+                transition: 0.3s; 
+                
+                &:hover {
+                    background: $white;
+                }
+            }
       }
       .social-media {
             display: flex;
             justify-content: space-around;
-      }
-      .social-media:hover {
-            background: $white;
+            
+            li {
+                padding: 5px 10px;
+                transition: 0.3s;
+                
+                &:hover {
+                    background: $white;
+                }
+            }
       }
 }
 
+.section-1 {
+      @include centerChild;
+      background: $white;
+      width: 80%;
+      margin: auto;
+      flex-direction: column;
+      position: relative;
+  
+      h4 {
+          position: relative;
+          display: flex;
+          align-items: center;
+          width: 80%;
+          padding: 30px;
+          
+          &::before {
+              content: "";
+              position: relative;
+              width: 33%;
+              height: 1px;
+              background: rgba(0, 0, 0, 0.082);
+              margin-right: 10px;
+          }
+          
+          &::after {
+              content: "";
+              position: relative;
+              width: 33%; 
+              height: 1px;
+              background: rgba(0, 0, 0, 0.082);
+              margin-left: 10px; 
+          }
+      }
+          
+      h2 {
+          font-weight: 700;
+      }
+      .img {
+            background: url(./images/pic01.jpg) center/cover;
+            min-height: 300px;
+            width: 80%;
+      }
+      .button {
+            margin: 30px auto 50px;
+      }
+}
+
+.section-2 {
+      @include centerChild;
+      background: $white;
+      width: 80%;
+      margin: auto;
+      flex-direction: row;
+
+      p {
+            text-align: justify;
+            padding: 30px;
+            line-height: 25px;
+      }
+
+      .s-left {
+            @include centerChild;
+            flex-direction: column;
+            border-top: 1px solid rgb(223, 223, 223);
+            padding: 30px 30px;
+
+                  h4 {
+                        padding-bottom: 15px;
+                  }
+                  h3 {
+                        padding-bottom: 15px;
+                  }
+                  .img-left {
+                        background: url(./images/pic02.jpg) center/cover;
+                        height: 33vh;
+                        width: 80%;
+                  }
+
+      }
+
+      .s-right {
+            @include centerChild;
+            flex-direction: column;
+            border-left: 1px solid rgb(223, 223, 223);
+            border-top: 1px solid rgb(223, 223, 223);
+            padding: 30px 30px ;
+            
+                  h4 {
+                        padding-bottom: 15px;
+                  }
+                  h3 {
+                        padding-bottom: 15px;
+                  }
+                  .img-right {
+                        background: url(./images/pic03.jpg) center/cover;
+                        height: 33vh;
+                        width: 80%;
+                  }
+      }
+}
